@@ -462,7 +462,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 📈 Quick Stats")
 st.sidebar.metric("Predictions Made", st.session_state.prediction_count)
 st.sidebar.metric("Supported Plants", "38")
-st.sidebar.metric("Accuracy Rate", "94.2%")
+st.sidebar.metric("Accuracy Rate", "97.16%")
 
 # Sidebar tips
 st.sidebar.markdown("---")
@@ -529,7 +529,7 @@ if st.session_state.app_mode == "Home":
         <div class='feature-card'>
             <div class='feature-icon'>🎯</div>
             <div class='feature-title'>High Accuracy</div>
-            <div class='feature-desc'>Our AI model achieves 94.2% accuracy with state-of-the-art deep learning algorithms</div>
+            <div class='feature-desc'>Our AI model achieves 97.16% accuracy with state-of-the-art deep learning algorithms</div>
         </div>
         """, unsafe_allow_html=True)
     
@@ -597,7 +597,7 @@ if st.session_state.app_mode == "Home":
             <span class='stat-label'>Disease Types</span>
         </div>
         <div class='stat-item'>
-            <span class='stat-number'>94.2%</span>
+            <span class='stat-number'>97.16%</span>
             <span class='stat-label'>Accuracy Rate</span>
         </div>
         <div class='stat-item'>
@@ -819,7 +819,7 @@ elif st.session_state.app_mode == "About":
     perf_col1, perf_col2, perf_col3 = st.columns(3)
     
     with perf_col1:
-        st.metric("Overall Accuracy", "94.2%", "2.1%")
+        st.metric("Overall Accuracy", "97.16%", "2.1%")
     
     with perf_col2:
         st.metric("Precision", "93.8%", "1.8%")
@@ -876,7 +876,7 @@ elif st.session_state.app_mode == "Statistics":
     met_col1, met_col2, met_col3, met_col4 = st.columns(4)
     
     with met_col1:
-        st.metric("Model Accuracy", "94.2%", "↑ 2.1%")
+        st.metric("Model Accuracy", "96.16%", "↑ 2.1%")
     
     with met_col2:
         st.metric("Total Predictions", f"{st.session_state.prediction_count:,}", "↑ New")
@@ -1004,7 +1004,7 @@ elif st.session_state.app_mode == "Statistics":
         st.markdown("""
         **📊 Validation**
         - Cross-validation: 5-fold
-        - Test accuracy: 94.2%
+        - Test accuracy: 97.16%
         - Inference time: 2.3s
         - Model size: 15.2 MB
         """)
@@ -1019,4 +1019,5 @@ elif st.session_state.app_mode == "Statistics":
         <br><br>
         <strong>PlantDoc AI</strong> - Empowering farmers with intelligent plant health monitoring
     </div>
+
     """, unsafe_allow_html=True)

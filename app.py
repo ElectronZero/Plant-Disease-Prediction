@@ -5,6 +5,9 @@ from PIL import Image
 import io
 import time
 
+from huggingface_hub import hf_hub_download
+from tensorflow.keras.models import load_model as keras_load_model
+
 # Set page configuration for a better layout
 st.set_page_config(
     page_title="🌿 PlantDoc - AI Disease Detection",
@@ -383,13 +386,17 @@ st.markdown("""
 
 @st.cache_resource
 def load_model():
-    """Loads the pre-trained Keras model from the file 'trained_model.keras'."""
+    """Loads the pre-trained Keras model from Hugging Face Hub."""
     try:
-        model = tf.keras.models.load_model("trained_model.keras")
+        # Download model from Hugging Face Hub
+        model_path = hf_hub_download(
+            repo_id="ayushman647/plant-disease-model",  # change to your HF repo
+            filename="trained_model.h5"  # or trained_model.keras if you uploaded that
+        )
+        model = keras_load_model(model_path)
         return model
     except Exception as e:
         st.error(f"🚨 Error loading the model: {e}")
-        st.error("Please make sure 'trained_model.keras' file is in the same directory as this app.")
         return None
 
 def model_prediction(model, uploaded_file):

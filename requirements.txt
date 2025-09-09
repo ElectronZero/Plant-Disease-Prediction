@@ -1,9 +1,9 @@
 streamlit
-tensorflow
+tensorflow-cpu
 pandas
 numpy
 scikit-learn
 matplotlib
 librosa
-huggingface_hub
 seaborn
+huggingface_hub
